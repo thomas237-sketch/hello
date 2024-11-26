@@ -106,3 +106,33 @@
 </body>
 </html>
 
+<section>
+  <h2>How to Install Red Hat Ansible on CentOS Stream 9</h2>
+  <ol>
+    <li>Update the system:
+      <pre><code>sudo dnf update -y</code></pre>
+    </li>
+    <li>Enable the EPEL repository:
+      <pre><code>sudo dnf install -y epel-release</code></pre>
+    </li>
+    <li>Install Ansible:
+      <pre><code>sudo dnf install -y ansible</code></pre>
+    </li>
+    <li>Verify the installation:
+      <pre><code>ansible --version</code></pre>
+    </li>
+    <li>Create an inventory file and test Ansible connectivity:
+      <pre><code>sudo nano /etc/ansible/hosts</code></pre>
+      Example contents:
+      <pre><code>[webservers]
+192.168.1.101
+192.168.1.102</code></pre>
+      Test with:
+      <pre><code>ansible all -m ping</code></pre>
+    </li>
+  </ol>
+  <p>Optional: Install the latest version using pip:
+    <pre><code>pip3 install ansible</code></pre>
+  </p>
+</section>
+
