@@ -108,31 +108,35 @@
 
 <section>
   <h2>How to Install Red Hat Ansible on CentOS Stream 9</h2>
-  <ol>
-    <li>Update the system:
-      <pre><code>sudo dnf update -y</code></pre>
-    </li>
-    <li>Enable the EPEL repository:
-      <pre><code>sudo dnf install -y epel-release</code></pre>
-    </li>
-    <li>Install Ansible:
-      <pre><code>sudo dnf install -y ansible</code></pre>
-    </li>
-    <li>Verify the installation:
-      <pre><code>ansible --version</code></pre>
-    </li>
-    <li>Create an inventory file and test Ansible connectivity:
-      <pre><code>sudo nano /etc/ansible/hosts</code></pre>
-      Example contents:
-      <pre><code>[webservers]
+  <div style="background-color: #f4f4f9; padding: 20px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+    <ol style="padding-left: 20px;">
+      <li>
+        <strong>Update the system:</strong>
+        <pre style="background: #eee; padding: 10px; border-radius: 4px; font-family: monospace;">sudo dnf update -y</pre>
+      </li>
+      <li>
+        <strong>Enable the EPEL repository:</strong>
+        <pre style="background: #eee; padding: 10px; border-radius: 4px; font-family: monospace;">sudo dnf install -y epel-release</pre>
+      </li>
+      <li>
+        <strong>Install Ansible:</strong>
+        <pre style="background: #eee; padding: 10px; border-radius: 4px; font-family: monospace;">sudo dnf install -y ansible</pre>
+      </li>
+      <li>
+        <strong>Verify the installation:</strong>
+        <pre style="background: #eee; padding: 10px; border-radius: 4px; font-family: monospace;">ansible --version</pre>
+      </li>
+      <li>
+        <strong>Create an inventory file and test Ansible connectivity:</strong>
+        <pre style="background: #eee; padding: 10px; border-radius: 4px; font-family: monospace;">sudo nano /etc/ansible/hosts</pre>
+        <p>Example contents:</p>
+        <pre style="background: #eee; padding: 10px; border-radius: 4px; font-family: monospace;">[webservers]
 192.168.1.101
-192.168.1.102</code></pre>
-      Test with:
-      <pre><code>ansible all -m ping</code></pre>
-    </li>
-  </ol>
-  <p>Optional: Install the latest version using pip:
-    <pre><code>pip3 install ansible</code></pre>
-  </p>
+192.168.1.102</pre>
+        <p>Test with:</p>
+        <pre style="background: #eee; padding: 10px; border-radius: 4px; font-family: monospace;">ansible all -m ping</pre>
+      </li>
+    </ol>
+  </div>
 </section>
 
