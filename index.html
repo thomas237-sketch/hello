@@ -107,8 +107,9 @@
 </html>
 
 <section>
-  <h2>How to Install Red Hat Ansible on CentOS Stream 9</h2>
+  <h2>How to Install and Configure Red Hat Ansible on CentOS Stream 9</h2>
   <div style="background-color: #f4f4f9; padding: 20px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+    <h3>Installation Steps</h3>
     <ol style="padding-left: 20px;">
       <li>
         <strong>Update the system:</strong>
@@ -126,15 +127,40 @@
         <strong>Verify the installation:</strong>
         <pre style="background: #eee; padding: 10px; border-radius: 4px; font-family: monospace;">ansible --version</pre>
       </li>
+    </ol>
+
+    <h3>Configuration Steps</h3>
+    <ol style="padding-left: 20px;">
       <li>
-        <strong>Create an inventory file and test Ansible connectivity:</strong>
+        <strong>Create an Inventory File:</strong>
+        <p>Define the managed nodes by editing the inventory file:</p>
         <pre style="background: #eee; padding: 10px; border-radius: 4px; font-family: monospace;">sudo nano /etc/ansible/hosts</pre>
-        <p>Example contents:</p>
+        <p>Add the following content:</p>
         <pre style="background: #eee; padding: 10px; border-radius: 4px; font-family: monospace;">[webservers]
 192.168.1.101
 192.168.1.102</pre>
-        <p>Test with:</p>
+      </li>
+      <li>
+        <strong>Test Connectivity:</strong>
+        <p>Ensure Ansible can communicate with the nodes:</p>
         <pre style="background: #eee; padding: 10px; border-radius: 4px; font-family: monospace;">ansible all -m ping</pre>
+      </li>
+      <li>
+        <strong>Create a Simple Playbook:</strong>
+        <p>Write a playbook to automate tasks:</p>
+        <pre style="background: #eee; padding: 10px; border-radius: 4px; font-family: monospace;">sudo nano ~/ansible-project/site.yml</pre>
+        <p>Add the following YAML content:</p>
+        <pre style="background: #eee; padding: 10px; border-radius: 4px; font-family: monospace;">---
+- name: Test Ansible Playbook
+  hosts: webservers
+  tasks:
+    - name: Ping the hosts
+      ping:</pre>
+      </li>
+      <li>
+        <strong>Run the Playbook:</strong>
+        <p>Execute the playbook to verify your configuration:</p>
+        <pre style="background: #eee; padding: 10px; border-radius: 4px; font-family: monospace;">ansible-playbook ~/ansible-project/site.yml</pre>
       </li>
     </ol>
   </div>
